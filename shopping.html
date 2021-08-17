@@ -1,0 +1,151 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="./shopping.css" />
+    <!-- <script src="./Script.js" async></script> -->
+</head>
+<body>
+    <div class="shopping-cart">
+        <!-- Title -->
+        <div class="title">
+          Shopping cart
+        </div>
+       
+        <!-- Product #1 -->
+        <div class="item">
+          <div class="buttons">
+            <a class="a-delete" href="#"><img src="./delete.png" id="delete" ></a>
+            <a class="a-heart" href="#"><img src="./whiteHeart.png" id="heart" class="red"></a>
+          </div>
+       
+          <div class="image">
+            <img src="./pc.png" alt="" />
+          </div>
+       
+          <div class="description">
+            <span>PC PORTABLE ASUS </span>
+            <span>AMD ATHLON</span>
+            <span>GRIS </span>
+          </div>
+       
+          <div class="container">
+            <button  type="button" name="button" onclick="incrementValue()"  >
+              <img src="./add.png" alt="" />
+            </button>
+            <input type="text" name="name" value="1"  id="number">
+            <button  type="button" name="button" onclick="decrementValue()">
+              <img src="./min.png" alt="" />
+            </button>
+          </div>
+       
+       
+          <div class="total-price">1200</div>
+        </div>
+       
+        <!-- Product #2 -->
+        <div class="item">
+            <div class="buttons">
+              <a class="a-delete" href="#"><img src="./delete.png" id="delete"></a>
+              <a class="a-heart" href="#"><img src="./whiteHeart.png" id="heart" class="red"></a>
+          </div>
+       
+          <div class="image">
+            <img src="./pc2.png" alt=""/>
+          </div>
+       
+          <div class="description">
+            <span>PC DE BUREAU VERSUS </span>
+            <span> STAR6000 CORE I7</span>
+            <span>NOIR</span>
+          </div>
+       
+          <div class="container">
+            <button  type="button" name="button" onclick="incrementValue()"  >
+              <img src="./add.png" alt="" />
+            </button>
+            <input type="text" name="name" value="1"  id="number">
+            <button type="button" name="button" onclick="decrementValue()">
+              <img src="./min.png" alt="" />
+            </button>
+          </div>
+       
+          <div class="total-price">1500</div>
+        </div>
+       
+        <!-- Product #3 -->
+        <div class="item">
+            <div class="buttons">
+              <a class="a-delete" href="#"><img src="./delete.png" id="delete" ></a>
+              <a class="a-heart" href="#"><img src="./whiteHeart.png" id="heart" class="red"></a>
+          </div>
+       
+          <div class="image">
+            <img src="./pc3.png" alt="" />
+          </div>
+       
+          <div class="description">
+            <span>PC DE BUREAU </span>
+            <span>APPLE IMAC RETINA</span>
+            <span>Blan</span>
+          </div>
+       
+          <div class="container">
+            <button  type="button" name="button"onclick="incrementValue()"  >
+              <img src="./add.png" alt="" />
+            </button>
+            <input type="text" name="name" value="1"  id="number">
+            <button  type="button" name="button" onclick="decrementValue()">
+              <img src="./min.png" alt="" />
+            </button>
+          </div>
+       
+       
+          <div class="total-price">3000</div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        function incrementValue()
+        {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            if(value<10){
+                value++;
+                    document.getElementById('number').value = value;
+            }
+        }
+        function decrementValue()
+        {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            if(value>1){
+                value--;
+                    document.getElementById('number').value = value;
+            }
+        
+        }
+        let heart = document.getElementById('heart');
+        heart.addEventListener('click',()=>{
+        if(heart.classList.contains('gray')){
+          heart.classList.remove('gray');
+          heart.classList.add('red');
+          heart.src = 'redHeart.jpg';
+        }
+        else
+        {
+          heart.classList.remove('red');
+          heart.classList.add('gray');
+         heart.src = 'whiteHeart.png';
+        }
+});
+
+       
+  </script>
+        
+        
+</body>
+
+</html>
